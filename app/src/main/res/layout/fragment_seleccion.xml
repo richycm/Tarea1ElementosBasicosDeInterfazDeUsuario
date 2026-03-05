@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elementos de Selección"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estos elementos permiten elegir opciones. El Switch de abajo cambia el tema de la aplicación."
+        android:layout_marginBottom="24dp"/>
+
+    <CheckBox
+        android:id="@+id/cbTerminos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aceptar términos y condiciones"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona tu plataforma:"
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgOpciones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp">
+        <RadioButton
+            android:id="@+id/rbAndroid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android (Java/Kotlin)"/>
+        <RadioButton
+            android:id="@+id/rbIos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="iOS (Swift)"/>
+    </RadioGroup>
+
+    <!-- Switch para cambiar el tema -->
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swModoOscuro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modo Oscuro"
+        android:layout_marginBottom="25dp"/>
+
+    <TextView
+        android:id="@+id/tvSeleccionResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado: Pendiente"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:gravity="center"/>
+
+</LinearLayout>

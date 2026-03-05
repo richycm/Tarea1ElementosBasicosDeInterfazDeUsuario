@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground"
+    android:fitsSystemWindows="true"> <!-- Esto hace que respete la barra de notificaciones automáticamente -->
+
+    <!-- Menú de botones arriba -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/btnText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextFields" android:layout_margin="2dp"/>
+            <Button android:id="@+id/btnBotones" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Botones" android:layout_margin="2dp"/>
+            <Button android:id="@+id/btnSeleccion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Selección" android:layout_margin="2dp"/>
+            <Button android:id="@+id/btnListas" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Listas" android:layout_margin="2dp"/>
+            <Button android:id="@+id/btnInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Info" android:layout_margin="2dp"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Espacio para fragmentos -->
+    <FrameLayout
+        android:id="@+id/contenedorFragmentos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

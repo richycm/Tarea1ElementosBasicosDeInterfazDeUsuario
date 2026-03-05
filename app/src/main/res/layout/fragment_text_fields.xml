@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextFields (EditText)"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Los campos de texto (EditText) permiten al usuario ingresar información a través del teclado, como nombres o correos."
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Entrada de texto -->
+    <EditText
+        android:id="@+id/etEntrada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Escribe tu nombre aquí"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnMostrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mostrar saludo"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Texto donde se mostrará el resultado -->
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aquí aparecerá el saludo..."
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:gravity="center"/>
+
+</LinearLayout>
