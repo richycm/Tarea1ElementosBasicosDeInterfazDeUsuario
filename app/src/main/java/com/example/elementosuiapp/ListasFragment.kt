@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
-import android.widget.Toast
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 class ListasFragment : Fragment() {
@@ -18,28 +18,44 @@ class ListasFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_listas, container, false)
 
         val listView = view.findViewById<ListView>(R.id.listView)
+        val tvInfoTitulo = view.findViewById<TextView>(R.id.tvInfoTitulo)
+        val tvInfoDescripcion = view.findViewById<TextView>(R.id.tvInfoDescripcion)
         
-        // Regresamos a la lista sencilla con temas de la tarea
         val temasTarea = arrayOf(
-            "1. TextFields (EditText)",
-            "2. Botones (Button)",
-            "3. ImageButton con iconos",
-            "4. CheckBox para opciones",
-            "5. RadioButtons para grupos",
-            "6. Switch de encendido/apagado",
-            "7. ListView para listas simples",
-            "8. TextView para información",
-            "9. ImageView para fotos",
-            "10. ProgressBar para carga",
-            "11. Fragments para navegación",
-            "12. Navigation Bar inferior"
+            "TextFields (EditText)",
+            "Botones (Button)",
+            "ImageButton",
+            "CheckBox",
+            "RadioButton",
+            "Switch",
+            "ListView",
+            "TextView",
+            "ImageView",
+            "ProgressBar"
         )
 
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, temasTarea)
+        // Usamos el layout personalizado item_lista para que herede el color del tema
+        val adapter = ArrayAdapter(requireContext(), R.layout.item_lista, temasTarea)
         listView.adapter = adapter
 
         listView.setOnItemClickListener { _, _, position, _ ->
-            Toast.makeText(requireContext(), "Tema: ${temasTarea[position]}", Toast.LENGTH_SHORT).show()
+            val seleccionado = temasTarea[position]
+            val explicacion = when(position) {
+                0 -> "Permite al usuario ingresar y editar texto. Es fundamental para formularios y búsquedas."
+                1 -> "Componente interactivo que ejecuta una acción específica al ser presionado por el usuario."
+                2 -> "Un botón que muestra una imagen o icono en lugar de texto para una interfaz más visual."
+                3 -> "Permite al usuario seleccionar una o varias opciones de un conjunto de elementos."
+                4 -> "Permite seleccionar solo una opción de un grupo. Al marcar uno, el anterior se desmarca."
+                5 -> "Un interruptor de dos estados (encendido/apagado) ideal para configuraciones y ajustes."
+                6 -> "Muestra una lista de elementos desplazable. Es muy eficiente para manejar muchos datos."
+                7 -> "Muestra texto estático que el usuario no puede editar. Se usa para etiquetas y títulos."
+                8 -> "Se utiliza para mostrar imágenes, fotos o recursos gráficos dentro de la aplicación."
+                9 -> "Indica visualmente el progreso de una operación, como una descarga o una carga de datos."
+                else -> "Elemento de interfaz estándar de Android."
+            }
+            
+            tvInfoTitulo.text = seleccionado
+            tvInfoDescripcion.text = explicacion
         }
 
         return view

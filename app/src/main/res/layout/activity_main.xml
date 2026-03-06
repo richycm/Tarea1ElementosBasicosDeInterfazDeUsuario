@@ -1,37 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="?android:attr/colorBackground"
-    android:fitsSystemWindows="true"> <!-- Esto hace que respete la barra de notificaciones automáticamente -->
+    android:fitsSystemWindows="true"
+    android:background="?android:attr/colorBackground">
 
-    <!-- Menú de botones arriba -->
-    <HorizontalScrollView
+    <!-- Pestañas que ocupan todo el ancho -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:scrollbars="none">
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorFullWidth="false"
+        app:tabSelectedTextColor="?attr/colorPrimary"
+        android:background="?android:attr/colorBackground" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/dividerVertical"
+        android:alpha="0.1"/>
 
-            <Button android:id="@+id/btnText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextFields" android:layout_margin="2dp"/>
-            <Button android:id="@+id/btnBotones" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Botones" android:layout_margin="2dp"/>
-            <Button android:id="@+id/btnSeleccion" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Selección" android:layout_margin="2dp"/>
-            <Button android:id="@+id/btnListas" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Listas" android:layout_margin="2dp"/>
-            <Button android:id="@+id/btnInfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Info" android:layout_margin="2dp"/>
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <!-- Espacio para fragmentos -->
+    <!-- Contenedor de Fragments -->
     <FrameLayout
         android:id="@+id/contenedorFragmentos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Footer Aesthetic (Ajustado) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingBottom="12dp"
+        android:paddingTop="8dp"
+        android:background="?android:attr/colorBackground">
+
+        <View
+            android:layout_width="30dp"
+            android:layout_height="1.5dp"
+            android:background="?attr/colorPrimary"
+            android:alpha="0.4"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ricardo Carmona Martínez"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:letterSpacing="0.15"
+            android:textColor="?attr/colorPrimary"
+            android:alpha="0.9"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tarea 1.- Elementos Básicos de Interfaz de Usuario"
+            android:textSize="10sp"
+            android:alpha="0.6"
+            android:letterSpacing="0.05"
+            android:textColor="?android:attr/textColorSecondary"/>
+    </LinearLayout>
 
 </LinearLayout>
